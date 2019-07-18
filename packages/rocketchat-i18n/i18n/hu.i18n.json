@@ -2383,6 +2383,7 @@
   "Push_enable": "Engedélyezze",
   "Push_enable_gateway": "engedélyezze Gateway",
   "Push_gateway": "Átjáró",
+  "Push_gateway_proxy": "Gateway Proxy",
   "Push_gcm_api_key": "GCM API kulcs",
   "Push_gcm_project_number": "GCM projekt száma",
   "Push_production": "Termelés",

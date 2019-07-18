@@ -94,6 +94,11 @@ function sendPush(gateway, service, token, options, tries = 0) {
 	if (token) {
 		data.headers.Authorization = `Bearer ${ workspaceAccesstoken }`;
 	}
+	//	return HTTP.post(`${ settings.get('Push_gateway') }/push/${ service }/send`, data, function(error, response) {
+	const proxy = settings.get('Push_gateway_proxy').replace(/\s/g, '');
+	if (proxy) {
+		data.npmRequestOptions = { proxy };
+	}
 
 	return HTTP.post(`${ gateway }/push/${ service }/send`, data, function(error, response) {
 		if (response && response.statusCode === 406) {
